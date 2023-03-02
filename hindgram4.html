@@ -579,8 +579,12 @@
                                 /* End */
 
                                 //console.log(pronouns[numberIdx][personIdx] + " " + verbconjs[verbconjsmap2[verbconjsmap[maptense[tenseIdx][numberIdx]][subtenseIdx]][genderIdx]] + " " + auxiliaries[auxiliariesmap[tenseIdx][personIdx][numberIdx][genderIdx]]);
+                                if (tenseIdx > 0 && subtenseIdx == 0) {
+                                    persanswer = pronouns[numberIdx][personIdx] + " " + verbconjs[verbconjsmap2[verbconjsmap[maptense[tenseIdx][numberIdx]][subtenseIdx]][genderIdx]];
+                                } else {
+                                    persanswer = pronouns[numberIdx][personIdx] + " " + verbconjs[verbconjsmap2[verbconjsmap[maptense[tenseIdx][numberIdx]][subtenseIdx]][genderIdx]] + " " + auxiliaries[auxiliariesmap[tenseIdx][personIdx][numberIdx][genderIdx]];
+                                }
 
-                                persanswer = pronouns[numberIdx][personIdx] + " " + verbconjs[verbconjsmap2[verbconjsmap[maptense[tenseIdx][numberIdx]][subtenseIdx]][genderIdx]] + " " + auxiliaries[auxiliariesmap[tenseIdx][personIdx][numberIdx][genderIdx]];
                                 inc++;
                                 rowcontent = "<tr><td>" + inc + ".</td><td>" + personsCont + " / " + tenseCont + "</td><td>" + persanswer + " ___" + tensesanswer + "</td><td>" + persresult + "</td></tr>"
 
