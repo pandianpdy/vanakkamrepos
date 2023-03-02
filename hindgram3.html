@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+        }
+        
+        .bgMauve {
+            background-color: #A96762
+        }
+        
+        .bgDeepBlue {
+            background-color: #2F5C8F
+        }
+        
+        .bgMandarin {
+            background-color: #d85c27
+        }
+        
+        .bgLavender {
+            background-color: #b999be
+        }
+        
+        .bgNightMoon {
+            background-color: #14365d
+        }
+    </style>
+    <style>
+        .wrapper {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .wraphead,
+        .wrapfoot {
+            height: 10%;
+            background-color: #2F5C8F
+        }
+        
+        .wrapbody {
+            height: 80%;
+        }
+        
+        .wrapmenu {
+            width: 20%;
+            height: 100%;
+            background-color: #14365d;
+            float: left;
+        }
+        
+        .wrapcontent {
+            width: 80%;
+            height: 100%;
+            background-color: #b999be;
+            float: left;
+        }
+    </style>
+    <style>
+        .qawrap {
+            width: 80%;
+            margin: auto;
+            margin-top: 20px;
+        }
+        
+        .qawrap select {
+            width: 100%;
+            padding: 3px;
+            background-color: rgb(223, 140, 131);
+            border-radius: 25px;
+            text-align: center;
+        }
+        
+        .qawrap input[type=button] {
+            width: 70px;
+            height: 70px;
+            background: url("img/download.jpg");
+            background-size: cover;
+            border-radius: 50%;
+        }
+        
+        .qawrap table {
+            width: 100%;
+        }
+        
+        .awrap {
+            height: 370px;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        
+        .qwrap table {
+            border-collapse: collapse;
+            text-align: right;
+        }
+        
+        .qwrap table td {
+            color: rgb(223, 140, 131);
+        }
+        
+        .awrap table th {
+            background-color: #A96762;
+        }
+        
+        .qwrap table td:nth-child(1) {
+            width: 60%;
+            padding: 5px;
+        }
+        
+        .qwrap table td:nth-child(2) {
+            width: 15%;
+            padding: 5px;
+        }
+        
+        .qwrap table td:nth-child(3) {
+            width: 10%;
+            padding: 5px;
+        }
+        
+        .qwrap table td:nth-child(4) {
+            width: 15%;
+            border: 1px solid sandybrown;
+        }
+        
+        .awrap table th:nth-child(1) {
+            width: 5%;
+        }
+        
+        .awrap table td:nth-child(4) {
+            width: 5%;
+            text-align: center;
+            font-family: Wingdings;
+        }
+        
+        .qwrap {
+            width: 85%;
+            background-color: #2F5C8F;
+            margin: auto;
+        }
+        
+        .qwrappar {
+            background-color: #2F5C8F;
+            padding: 5px;
+            border-radius: 25px;
+        }
+        
+        .awrap {
+            margin-top: 10px;
+        }
+        
+        .awrap table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .awrap table td {
+            border: 1px solid saddlebrown;
+            padding: 5px;
+        }
+        
+        .awrap table th {
+            border: 1px solid saddlebrown;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="wraphead"></div>
+        <div class="wrapbody">
+            <div class="wrapmenu"></div>
+            <div class="wrapcontent">
+                <div class="qawrap">
+                    <div class="qwrappar">
+                        <div class="qwrap">
+                            <table class="qtable">
+                                <tr>
+                                    <td id="qpers">First Person Singular masculine</td>
+                                    <td colspan="2">
+                                        <select name="" id="selpers">
+                                        <option value=""></option>                                        
+                                        <option value="मैं">मैं</option>
+                                        <option value="हम">हम</option>
+                                        <option value="तू">तू</option>
+                                        <option value="तुम">तुम</option>
+                                        <option value="आप">आप</option>
+                                        <option value="यह">यह</option>
+                                        <option value="वह">वह</option>
+                                        <option value="ये">ये</option>
+                                        <option value="वे">वे</option>
+                                    </select>
+                                    </td>
+                                    <td rowspan="2">
+                                        <input type="button" value="OK" onclick="preperequestion()">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="qtense">simple present tense</td>
+                                    <td>
+                                        <select name="" id="seltenses1">
+                                        <option value=""></option>
+                                        <option value="ता">ता</option>
+                                        <option value="ती">ती</option>
+                                        <option value="ते">ते</option>
+                                        <option value="आ(या)">आ(या)</option>
+                                        <option value="ए">ए"</option>
+                                        <option value="ई">ई</option>
+                                        <option value="ईं">ईं</option>
+                                        <option value="ऊँगा">ऊँगा</option>
+                                        <option value="ओगे">ओगे</option>
+                                        <option value="एगा">एगा</option>
+                                        <option value="एँगे">एँगे</option>
+                                        <option value="ऊँगी">ऊँगी</option>
+                                        <option value="ओगी">ओगी</option>
+                                        <option value="एगी">एगी</option>
+                                        <option value="एँगी">एँगी</option>       
+                                        <option value="रहा">रहा</option>
+                                        <option value="रहे">रहे</option>
+                                        <option value="रही">रही</option>                                               
+
+                                    </select>
+                                    </td>
+                                    <td>
+                                        <select name="" id="seltenses2">
+                                        <option value=""></option>
+                                        <option value="हूँ">हूँ</option>
+                                        <option value="हो">हो</option>
+                                        <option value="है">है</option>
+                                        <option value="हैं">हैं</option>
+                                        <option value="था">था</option>
+                                        <option value="थे">थे</option>
+                                        <option value="थी">थी</option>
+                                        <option value="थीं">थीं</option>
+                                        <option value="हूँगा">हूँगा</option>
+                                        <option value="होगे">होगे</option>
+                                        <option value="होगा">होगा</option>
+                                        <option value="होंगे">होंगे</option>
+                                        <option value="हूँगी">हूँगी</option>
+                                        <option value="होगी">होगी</option>
+                                        <option value="होंगी">होंगी</option>
+                                    </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="awrap">
+                        <table class="atable" id="atable">
+                            <tr>
+                                <th>Sl.No</th>
+                                <th>Question</th>
+                                <th>Answare</th>
+                                <th>Result</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapfoot"></div>
+    </div>
+
+
+    <script>
+        persons = ["First", "Second", "Third"];
+        numbers = ["Singular", "Plural"];
+        genders = ["Masculine", "Feminine"];
+        tenses = ["Present", "Past", "Future"];
+        subtenses = ["Simple", "Continuous", "Perfect"];
+
+        var pronouns = [
+            [
+                ["मैं"],
+                ["तू", "तुम"],
+                ["यह", "वह"]
+            ],
+            [
+                ["हम"],
+                ["आप"],
+                ["ये", "वे"]
+            ]
+        ];
+
+        var inc = 0;
+
+        verbconjs = ["ता", "ती", "ते", "आ(या)", "ए", "ई", "ईं", "ऊँगा", "ओगे", "एगा", "एँगे", "ऊँगी", "ओगी", "एगी", "एँगी", "रहा", "रहे", "रही"];
+        auxiliaries = ["हूँ", "हो", "है", "हैं", "था", "थे", "थी", "थीं", "हूँगा", "होगे", "होगा", "होंगे", "हूँगी", "होगी", "होंगी"];
+
+        auxiliariesmap = [
+            [
+                [
+                    [0, 0],
+                    [3, 3]
+                ],
+                [
+                    [1, 1],
+                    [3, 3]
+                ],
+                [
+                    [2, 2],
+                    [3, 3]
+                ]
+            ],
+            [
+                [
+                    [4, 6],
+                    [5, 7]
+                ],
+                [
+                    [5, 7],
+                    [5, 7]
+                ],
+                [
+                    [5, 7],
+                    [5, 7]
+                ]
+            ],
+            [
+                [
+                    [8, 12],
+                    [11, 14]
+                ],
+                [
+                    [9, 13],
+                    [11, 14]
+                ],
+                [
+                    [10, 13],
+                    [11, 14]
+                ]
+            ]
+        ]
+
+
+
+        maptense = [
+            [
+                [0],
+                [1]
+            ],
+            [
+                [2],
+                [3]
+            ],
+            [
+                [4],
+                [5]
+            ]
+        ];
+
+        verbconjsmap = [
+            [
+                [0],
+                [1],
+                [2]
+            ],
+            [
+                [3],
+                [4],
+                [5]
+            ],
+            [
+                [2],
+                [1],
+                [2]
+            ],
+            [
+                [5],
+                [4],
+                [5]
+            ],
+            [
+                [6],
+                [1],
+                [2]
+            ],
+            [
+                [7],
+                [4],
+                [5]
+            ]
+        ];
+
+        verbconjsmap2 = [
+            [0, 1],
+            [15, 17],
+            [3, 5],
+            [2, 1],
+            [16, 17],
+            [4, 6],
+            [7, 11],
+            [10, 14]
+        ];
+
+
+        personIdx = 0;
+        numberIdx = 0;
+        genderIdx = 0;
+        tenseIdx = 0;
+        subtenseIdx = 0;
+
+        function generatequestion() {
+            generatepronoun();
+            generatetense();
+            // console.log(verbconjsmap[maptense[tenseIdx][numberIdx]][subtenseIdx][genderIdx]);
+            // if second person singular
+            /*
+            if (numberIdx = 0 && personIdx == 0) {
+                console.log(pronouns[numberIdx][personIdx] + " " + verbconjs[verbconjsmap2[verbconjsmap[maptense[tenseIdx][numberIdx]][subtenseIdx]][genderIdx]] + " " + auxiliaries[auxiliariesmap[tenseIdx][personIdx][numberIdx][genderIdx]]);
+            } else {
+                console.log(pronouns[numberIdx][personIdx] + " " + verbconjs[verbconjsmap2[verbconjsmap[maptense[tenseIdx][numberIdx]][subtenseIdx]][genderIdx]] + " " + auxiliaries[auxiliariesmap[tenseIdx][personIdx][numberIdx][genderIdx]]);
+            }
+            */
+        }
+
+        function generatepronoun() {
+            //personIdx = genrndnum(persons);
+            //numberIdx = genrndnum(numbers);
+            genderIdx = genrndnum(genders);
+
+            numberIdx = 0;
+            personIdx = 1;
+
+            personsCont = persons[personIdx] + " Person " + numbers[numberIdx] + " " + genders[genderIdx];
+            obj = document.getElementById("qpers")
+            obj.innerText = personsCont;
+
+        }
+
+        function generatetense() {
+
+            tenseIdx = genrndnum(tenses);
+            subtenseIdx = genrndnum(subtenses);
+
+            tenseCont = tenses[tenseIdx] + " " + subtenses[subtenseIdx] + " Tense";
+            obj = document.getElementById("qtense")
+            obj.innerText = tenseCont;
+
+        }
+
+        function genrndnum(objAr) {
+            objLen = objAr.length;
+            onjIdx = Math.floor(Math.random() * objLen);
+            return onjIdx;
+
+        }
+
+        function preperequestion() {
+
+            obj = document.getElementById("qpers")
+            personsCont = obj.innerText
+            obj = document.getElementById("qtense")
+            tenseCont = obj.innerText;
+
+            var selpersval = document.querySelector('#selpers');
+            var seltensesval1 = document.querySelector('#seltenses1');
+            var seltensesval2 = document.querySelector('#seltenses2');
+
+            persanswer = selpersval.value;
+            tensesanswer = seltensesval1.value + " " + seltensesval2.value;
+
+            pronounrep = "";
+            verbrep = "";
+            auxiliaryrep = "";
+
+            if (persanswer != "" && tensesanswer != "") {
+                persresult = "û"
+
+                // if second person singular
+                if (numberIdx == 0 && personIdx == 1) {
+                    secperson = pronouns[numberIdx][personIdx];
+
+
+                    if (persanswer == secperson[0]) {
+                        pronounrep = secperson[0];
+                        if (subtenseIdx == 0) {
+                            verbrep = verbconjs[verbconjsmap2[verbconjsmap[maptense[tenseIdx][numberIdx]][subtenseIdx]][genderIdx]];
+                            if (personIdx == 0) {
+                                auxiliaryrep = auxiliaries[auxiliariesmap[tenseIdx][personIdx][numberIdx][genderIdx] + 1];
+                            }
+                        } else {
+                            verbrep = verbconjs[verbconjsmap2[verbconjsmap[maptense[tenseIdx][numberIdx]][subtenseIdx]][genderIdx]];
+                            auxiliaryrep = auxiliaries[auxiliariesmap[tenseIdx][personIdx][numberIdx][genderIdx]];
+                        }
+
+                    } else {
+                        pronounrep = secperson[1];
+                        verbrep = verbconjs[verbconjsmap2[verbconjsmap[maptense[tenseIdx][numberIdx]][subtenseIdx]][genderIdx]];
+                        auxiliaryrep = auxiliaries[auxiliariesmap[tenseIdx][personIdx][numberIdx][genderIdx]];
+                    }
+
+                    console.log(pronounrep + " x " + verbrep + " " + auxiliaryrep);
+                } else {
+                    console.log(pronouns[numberIdx][personIdx] + " " + verbconjs[verbconjsmap2[verbconjsmap[maptense[tenseIdx][numberIdx]][subtenseIdx]][genderIdx]] + " " + auxiliaries[auxiliariesmap[tenseIdx][personIdx][numberIdx][genderIdx]]);
+                }
+
+                // alert(persanswer);
+                // alert(persans[persidx][0]);
+                /*                    
+                                if (persans[persidx][0] == persanswer) {
+                                    persresult = "ü";
+                                } else if (persans[persidx][1] == persanswer) {
+                                    persresult = "ü";
+                                }
+                */
+
+
+
+                inc++;
+                rowcontent = "<tr><td>" + inc + ".</td><td>" + personsCont + " / " + tenseCont + "</td><td>" + persanswer + " ___" + tensesanswer + "</td><td>" + persresult + "</td></tr>"
+
+                tblobj = document.getElementById("atable")
+                tblobj.innerHTML += rowcontent;
+                selpersval.selectedIndex = "-1";
+                seltensesval1.selectedIndex = "-1";
+                seltensesval2.selectedIndex = "-1";
+                generatequestion();
+            }
+
+        }
+
+        generatequestion()
+    </script>
+
+</body>
+
+</html>
